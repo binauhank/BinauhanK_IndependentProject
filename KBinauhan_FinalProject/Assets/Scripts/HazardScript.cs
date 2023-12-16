@@ -8,10 +8,18 @@ public class HazardScript : MonoBehaviour
     void OnTriggerEnter (Collider collider)
     {
         GameObject collidedWith = collider.gameObject;
-        if (collidedWith.tag == gameObject.tag)
+        if (collidedWith.tag == "Ball")
         {
             Destroy (collidedWith);
             isHit = true;
         }
+    }
+    void OnGUI ()
+    {
+        if (isHit == true)
+            {
+                Rect boxRect = new Rect(Screen.width / 2 - 75, Screen.height - 200, 150, 25);
+                GUI.Box(boxRect, "Ball was destroyed!");
+            }
     }
 }

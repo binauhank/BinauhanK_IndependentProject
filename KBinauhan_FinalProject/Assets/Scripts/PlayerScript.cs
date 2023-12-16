@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class PlayerScript : MonoBehaviour
                 wallCooldown = cooldownTime;
                 Instantiate(prefab, playerCamera.transform.position + playerCamera.transform.forward * distance, playerCamera.transform.rotation);
             }
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

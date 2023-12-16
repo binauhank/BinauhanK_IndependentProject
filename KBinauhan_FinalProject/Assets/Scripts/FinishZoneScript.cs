@@ -8,7 +8,7 @@ public class FinishZoneScript : MonoBehaviour
 	void OnTriggerEnter (Collider collider)
 	{
 		GameObject collidedWith = collider.gameObject;
-		if (collidedWith.tag == gameObject.tag)
+		if (collidedWith.tag == "Ball")
 		{
 			isSolved = true;
 		}
